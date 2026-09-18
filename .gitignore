@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+
+# Builds
+dist/
+coverage/
+*.tsbuildinfo
+
+# Env y secretos
+.env
+.env.local
+*.env
+
+# Datos locales (SQLite de fases de tools)
+*.db
+*.sqlite
+
+# Logs
+*.log
+npm-debug.log*
+
+# VS Code: configs compartidas sí, perfiles y cachés de debug no
+.vscode/.chrome-debug-profile/

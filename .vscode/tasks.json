@@ -1,0 +1,77 @@
+{
+  // Tasks del monorepo (todas corren desde la raíz — regla del workspace).
+  // Build/verify son tasks bloqueantes; dev corre en background (server + web).
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install: monorepo completo",
+      "type": "shell",
+      "command": "npm install",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "build: contracts",
+      "type": "shell",
+      "command": "npm run build:contracts",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "build: server",
+      "type": "shell",
+      "command": "npm run build --workspace @precurso/server",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$tsc", "$eslint-stylish"]
+    },
+    {
+      "label": "build: web",
+      "type": "shell",
+      "command": "npm run build --workspace @precurso/web",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$tsc", "$eslint-stylish"]
+    },
+    {
+      "label": "build: todo (contracts + server + web)",
+      "type": "shell",
+      "command": "npm run build",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$tsc", "$eslint-stylish"],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "verify: lint + typecheck + build",
+      "type": "shell",
+      "command": "npm run check",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$eslint-stylish", "$tsc"]
+    },
+    {
+      "label": "start: full-stack dev (server + web)",
+      "type": "shell",
+      "command": "npm start",
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      // El server compila con watch y Vite queda sirviendo: task de larga duración.
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      }
+    },
+    {
+      "label": "watch: contracts (para fases que tocan DTOs)",
+      "type": "shell",
+      "command": "npm run watch:contracts",
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": "$tsc",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "watch"
+      }
+    }
+  ]
+}

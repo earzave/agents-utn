@@ -1,0 +1,80 @@
+{
+  // Configuraciones de debug del monorepo. Todas asumen correr desde la raíz.
+  // Backend: NestJS con dist/ (node). Frontend: Vite dev server + Chrome.
+  // Full-stack: compound que arranca ambos a la vez.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "server: debug (watch + attach)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/server",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start:debug"],
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "console": "integratedTerminal",
+      // Breakpoints en TS fuente: mapas dist/*.js -> src/*.ts vía source maps.
+      "sourceMaps": true,
+      "restart": true,
+      "windows": {
+        "runtimeExecutable": "npm.cmd"
+      }
+    },
+    {
+      "name": "server: debug (sin watch, dist actual)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/server",
+      // Requiere npm run build --workspace @precurso/server antes.
+      "program": "${workspaceFolder}/apps/server/dist/main.js",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**"
+      ],
+      "console": "integratedTerminal",
+      "sourceMaps": true,
+      // Carga el .env del server (misma fuente que ConfigModule en runtime normal).
+      "envFile": "${workspaceFolder}/apps/server/.env"
+    },
+    {
+      "name": "web: debug (Chrome + Vite)",
+      "type": "chrome",
+      "request": "launch",
+      // Levanta Vite si no está corriendo y abre el navegador con el inspector.
+      "runtimeArgs": ["--remote-debugging-port=9222"],
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/apps/web/src",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*",
+        "vite:///src/*": "${webRoot}/*",
+        "vite:///@/*": "${workspaceFolder}/apps/web/src/*"
+      },
+      "userDataDir": "${workspaceFolder}/.vscode/.chrome-debug-profile"
+    },
+    {
+      "name": "web: attach a Chrome ya abierto",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/apps/web/src",
+      "sourceMapPathOverrides": {
+        "vite:///src/*": "${webRoot}/*",
+        "vite:///@/*": "${workspaceFolder}/apps/web/src/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "full-stack: server + web",
+      "configurations": [
+        "server: debug (watch + attach)",
+        "web: debug (Chrome + Vite)"
+      ],
+      // Orden: el server arranca primero; web depende solo del puerto libre.
+      "stopAll": true
+    }
+  ]
+}

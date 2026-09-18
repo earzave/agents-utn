@@ -1,0 +1,53 @@
+{
+  // Ocultar ruido de build en el explorador (no se borran del disco, solo de la vista).
+  // node_modules de la raíz y dist de los workspaces quedan visibles por defecto salvo
+  // explícitamente excluidos acá.
+  "files.exclude": {
+    "**/apps/web/node_modules": true,
+    "**/apps/server/dist": true,
+    "**/apps/web/dist": true,
+    "**/packages/contracts/dist": true,
+    "**/*.tsbuildinfo": true
+  },
+
+  // Búsqueda y watch: excluir artefactos para no indexar basura (no afecta git).
+  "search.exclude": {
+    "**/apps/web/node_modules": true,
+    "**/apps/server/dist": true,
+    "**/apps/web/dist": true,
+    "**/packages/contracts/dist": true
+  },
+  "files.watcherExclude": {
+    "**/apps/web/node_modules/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true
+  },
+
+  // TypeScript del workspace: usa la versión hoisted de la raíz (5.9.x) en ambos apps.
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+
+  // Formateo y editor (convención del monorepo: prettier 3 + eslint 9 flat config).
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    { "pattern": "apps/server" },
+    { "pattern": "apps/web" }
+  ],
+
+  // Terminal por defecto para las tasks (scripts npm definidos en tasks.json).
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  // Asociaciones de archivos (nada especial, pero consistente).
+  "files.associations": {
+    "*.env.example": "dotenv"
+  },
+
+  // Tests: política D3 del protocolo — cero tests en el proyecto. Evitar scaffolding
+  // de tests por accidente desde el editor.
+  "testing.automaticallyOpenPeekView": "never"
+}

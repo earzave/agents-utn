@@ -1,0 +1,18 @@
+{
+  // Extensiones recomendadas del monorepo. La lista mínima para trabajar:
+  // debug de Node/Chrome, ESLint, Prettier y TS. El resto son QoL.
+  "recommendations": [
+    "ms-vscode.node-debug2",
+    "msjsdiag.debugger-for-chrome",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig"
+  ],
+  // No instalar packs gigantes: el proyecto no usa tests (política D3), Docker es
+  // ejercicio posterior (fase 15) y las extensiones de contenedores entran cuando toque.
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "orta.vscode-jest",
+    "firsttris.vscode-jest-runner"
+  ]
+}

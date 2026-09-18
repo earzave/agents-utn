@@ -1,0 +1,30 @@
+{
+  "name": "precurso-utn-agents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pre-curso UTN — RAG y Arquitectura de Agentes. Monorepo npm workspaces.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "postinstall": "npm run build --workspace @precurso/contracts",
+    "prebuild:server": "npm run build --workspace @precurso/contracts && npm run build --workspace @precurso/server",
+    "start": "npm run prebuild:server && concurrently -n server,web -c blue,green \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "npm run start:dev --workspace @precurso/server",
+    "dev:web": "npm run dev --workspace @precurso/web",
+    "build": "npm run build --workspace @precurso/contracts && npm run build --workspace @precurso/server && npm run build --workspace @precurso/web",
+    "build:contracts": "npm run build --workspace @precurso/contracts",
+    "watch:contracts": "npm run build --workspace @precurso/contracts -- --watch",
+    "lint": "npm run lint --workspace @precurso/server && npm run lint --workspace @precurso/web",
+    "lint:fix": "npm run lint:fix --workspace @precurso/server && npm run lint:fix --workspace @precurso/web",
+    "typecheck": "npm run typecheck --workspace @precurso/server && npm run typecheck --workspace @precurso/web",
+    "check": "npm run lint && npm run typecheck && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
