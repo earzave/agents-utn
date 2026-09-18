@@ -24,7 +24,7 @@ Repository → service → tool adapter (con zod en cada límite); SQL arbitrari
 
 SQLite con payments, payment_events, payment_retries + repository/service/tool adapter.
 
-- [ ] La DB está seedeada desde `payments.json` con migraciones simples.
+- [ ] La DB está seedeada desde `data/payments.json` (solo lectura) con migraciones simples.
 - [ ] Ninguna tool acepta SQL del modelo (solo operaciones de dominio con params validados).
 - [ ] Queries limitadas (LIMIT/timeout) y errores tipados.
 - [ ] `executeSql(sqlFromLLM)` no existe en ninguna capa.

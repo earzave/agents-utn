@@ -24,6 +24,11 @@ Integración de todo el stack (RAG, hybrid, reranking, tools, agent loop, state,
 
 "Payment Investigation Agent" completo + `docker-compose` del stack (pg, Qdrant, server, web) + **examen final** (protocolo §6).
 
+> **Decisión pendiente D7** (se decide al llegar a esta fase, según lo que pida el
+> proyecto del curso): si el proyecto final **integra Python como servicio detrás del
+> mismo endpoint** (ej. FastAPI detrás del NestJS/gateway) o queda como **laboratorio
+> aparte** en `labs/python/`. Registrar la decisión en `decisiones.md`.
+
 - [ ] El agente responde la pregunta integradora con trazabilidad total.
 - [ ] `docker-compose up` levanta el stack completo.
 - [ ] Evaluación corriendo sobre el sistema integrado (métricas de 14).

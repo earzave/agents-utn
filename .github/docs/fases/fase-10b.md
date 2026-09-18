@@ -42,7 +42,7 @@ Conceptual + mini-lab opcional (grafo chico en JSON: entidades, relaciones, reco
 
 1. ¿Por qué? ¿Por qué GraphRAG ayuda en preguntas multi-hop?
 2. ¿Qué pasaría si...? el grafo está desactualizado respecto a los docs?
-3. Diseño: ¿cómo extraerías entidades y relaciones de tus docs seed?
+3. Diseño: ¿cómo extraerías entidades y relaciones de tus docs de `data/docs/`?
 
 ## Cambios en vivo que el tutor puede pedir
 

@@ -70,8 +70,11 @@ PrecursoUtnAgents/                (monorepo npm workspaces)
 ├── apps/
 │   ├── server/                      ← @precurso/server: NestJS 11 + TS estricto — slices por fase con TODOs
 │   └── web/                         ← @precurso/web: Vite + React 19 + Tailwind v4 + shadcn/ui + RTK + sagas
-└── packages/
-    └── contracts/                   ← @precurso/contracts: DTOs, interfaces y schemas zod FE/BE
+├── packages/
+│   └── contracts/                   ← @precurso/contracts: DTOs, interfaces y schemas zod FE/BE
+├── data/                            ← datos compartidos TS/Python (solo lectura; lo crea el Scaffolder en fases 1-2)
+└── labs/
+    └── python/                      ← labs Python con venv propio (D1: fases 3F-Py, 11, 12, 14; fuera del monorepo npm)
 ```
 
 Mapa completo de archivos: [`INDEX.md`](INDEX.md).
@@ -87,10 +90,11 @@ Mapa completo de archivos: [`INDEX.md`](INDEX.md).
 | Frontend            | React 19 + Vite + TypeScript + Tailwind v4 + shadcn/ui                                             |
 | LLM + embeddings    | Ollama Cloud (API OpenAI-compatible) tras la interfaz `LlmProvider` (decisión D4)                  |
 | Vector DB           | In-memory/JSON al principio → Qdrant/pgvector cuando la fase los introduce (Docker como ejercicio) |
-| Datos               | JSON/SQLite primero; SQL real en fases de tools                                                    |
-| Docs RAG            | Markdown ficticio (`apps/server/seed/docs/`, creado en fase 2)                                     |
+| Datos               | JSON/SQLite primero; SQL real en fases de tools · datos compartidos en `data/` (solo lectura)      |
+| Docs RAG            | Markdown ficticio (`data/docs/`, creado en fase 2)                                                 |
 | Tests               | **Cero tests en todo el proyecto** (decisión D3; casos de aceptación manuales por fase)            |
 | FE estado           | Redux Toolkit + redux-saga (decisión D5; slices/sagas escritos por el estudiante)                  |
+| Labs Python         | `labs/python/` con venv propio (D1: fases 3F-Py, 11, 12, 14; Pydantic en límites; Ruff)            |
 
 ## Doble rol del frontend
 

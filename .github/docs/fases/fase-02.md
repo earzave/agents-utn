@@ -22,7 +22,7 @@ Chunking fixed-size, overlap, recursive; chunking por encabezados Markdown; chun
 
 ## Ejercicio y criterios de aceptación (medibles)
 
-`retrieval/chunker.ts`: fixed+overlap primero, luego recursive, luego por encabezados Markdown sobre docs seed.
+`retrieval/chunker.ts`: fixed+overlap primero, luego recursive, luego por encabezados Markdown sobre los docs de `data/docs/` (raíz del repo, compartidos con los labs Python).
 
 - [ ] Los chunks preservan metadata completa (documentId, title, section, chunkIndex).
 - [ ] Un chunk nunca corta a mitad de una oración clave (se verifica con un ejemplo).

@@ -7,7 +7,9 @@
     "**/apps/server/dist": true,
     "**/apps/web/dist": true,
     "**/packages/contracts/dist": true,
-    "**/*.tsbuildinfo": true
+    "**/*.tsbuildinfo": true,
+    "**/.venv": true,
+    "**/__pycache__": true
   },
 
   // Búsqueda y watch: excluir artefactos para no indexar basura (no afecta git).
@@ -15,12 +17,15 @@
     "**/apps/web/node_modules": true,
     "**/apps/server/dist": true,
     "**/apps/web/dist": true,
-    "**/packages/contracts/dist": true
+    "**/packages/contracts/dist": true,
+    "**/.venv": true,
+    "**/__pycache__": true
   },
   "files.watcherExclude": {
     "**/apps/web/node_modules/**": true,
     "**/node_modules/**": true,
-    "**/dist/**": true
+    "**/dist/**": true,
+    "**/.venv/**": true
   },
 
   // TypeScript del workspace: usa la versión hoisted de la raíz (5.9.x) en ambos apps.
@@ -32,6 +37,12 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+  },
+
+  // Python (labs/python, D1): Prettier no formatea Python → Ruff. El fix-all de
+  // eslint queda solo para TS/JS (Ruff se corre explícito en los labs).
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "eslint.useFlatConfig": true,
   "eslint.workingDirectories": [

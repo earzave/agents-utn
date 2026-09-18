@@ -106,3 +106,9 @@ Cada concepto debe poder explicarse **con palabras propias + analogía backend**
 - [ ] ¿Cómo medir calidad de un RAG?
 - [ ] qué hacen RAGAS / Phoenix / TruLens (a nivel conceptual)
 - [ ] tracing / observabilidad de agentes
+
+## Python (labs/python)
+
+- [ ] Pydantic vs zod (mismo problema, distinta herramienta; qué genera cada uno)
+- [ ] entorno virtual y reproducibilidad de dependencias (venv + requirements)
+- [ ] mapeo de conceptos TS ↔ Python (provider, tool, agent)

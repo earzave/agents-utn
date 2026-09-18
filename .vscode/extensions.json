@@ -6,7 +6,9 @@
     "msjsdiag.debugger-for-chrome",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "ms-python.python",
+    "charliermarsh.ruff"
   ],
   // No instalar packs gigantes: el proyecto no usa tests (política D3), Docker es
   // ejercicio posterior (fase 15) y las extensiones de contenedores entran cuando toque.

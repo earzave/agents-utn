@@ -65,9 +65,15 @@ PrecursoUtnAgents/
 │   ├── server/           ← NestJS 11 + TS estricto ("AI Engineering Assistant" backend)
 │   └── web/              ← Vite + React 19 + Tailwind v4 + shadcn/ui + RTK + sagas
 │                            (lab de pruebas + vista de estudio del pre-curso)
-└── packages/
-    └── contracts/        ← @precurso/contracts: DTOs, interfaces y schemas zod
-                             compartidos FE/BE
+├── packages/
+│   └── contracts/        ← @precurso/contracts: DTOs, interfaces y schemas zod
+│                            compartidos FE/BE
+├── data/                 ← datos compartidos TS/Python (solo lectura; lo crea el
+│                            Scaffolder en fases 1-2): docs RAG, payments.json,
+│                            frases de embeddings, golden set
+└── labs/
+    └── python/           ← labs Python con venv propio (D1: fases 3F-Py, 11, 12 y 14;
+                             fuera del monorepo npm; solo `.env.example` pre-cargado)
 ```
 
 ## Comandos (desde la raíz)

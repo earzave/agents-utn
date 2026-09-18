@@ -5,18 +5,52 @@ Formato corto; una entrada por decisión. Referenciado por `copilot-instructions
 
 ---
 
-## D1 — Lenguaje de los laboratorios del curso
+## D1 — Lenguaje del pre-curso (híbrido TS + Python)
 
 - **Contexto:** CrewAI es Python-only; LangChain, LangGraph y LlamaIndex tienen versión JS
-  pero el ecosistema y los ejemplos van primero en Python. Un pre-curso 100% TS deja un
-  hueco si el curso se dicta en Python.
-- **Decisión (estudiante, 2026-09-18):** el curso es/se asume en **Python**.
-- **Consecuencias:** se agrega la **Fase P — Puente a Python** (Tier C): leer y modificar
-  ejemplos mínimos de LangChain y CrewAI en `labs/python/` (carpeta aparte, sin tocar el
-  monorepo TS). CrewAI en Fase 12 queda como demostración de lectura.
-- **Alternativa descartada:** descartar Python del pre-curso (riesgo de barrera de idioma
-  en la primera clase).
-- **Pendiente de confirmar con el coordinador:** versión de Python/librerías del curso.
+  pero el ecosistema y los ejemplos del curso van primero en Python. El curso puede
+  dictarse en TS, Python o ambos (a confirmar con el coordinador).
+- **Decisión (estudiante, 2026-09-18, NO depende de lo que dicte el curso):**
+  **híbrido**.
+  - **TypeScript** para aprender los conceptos del curso a mano (Tier A + B: RAG,
+    embeddings, tools, agent loop, estado, seguridad) — es el idioma donde el estudiante
+    construye comprensión.
+  - **Python** (`labs/python/`) para los temas y tecnologías que lo requieren:
+    **LangGraph (Fase 11), CrewAI/AutoGen (Fase 12), RAGAS (Fase 14)** y los ejemplos de
+    clase.
+  - Conviven en el mismo repo: `apps/*` + `packages/*` (npm workspaces) y `labs/python/`
+    como carpeta hermana con venv propio; los datos compartidos viven en `data/`.
+- **Pendiente con el coordinador (fecha límite 11/10, NO bloquea la decisión):** versión
+  de Python/librerías del curso y gestor de dependencias (alimenta D8 y D7).
+- **Consecuencias:** la 3F-Py hace el puente TS → Python; **T-10** es script Python
+  (entorno listo en semana 1). No existe plan de reversión: la decisión no cambia según
+  la respuesta del coordinador (a lo sumo se agregan lecturas en LangGraph.js si el
+  curso usa TS).
+- **Alternativa descartada:** decidir el idioma del pre-curso en función del curso
+  (dejaría la comprensión a merced de lo que esconde cada framework).
+
+## D6 — Idioma de la Fase 11 (LangGraph)
+
+- **Decisión (estudiante, 2026-09-18):** LangGraph en **Python** (`labs/python/`),
+  independiente de la respuesta del coordinador (parte del híbrido D1).
+- **Nota:** si el curso resulta dictarse en TypeScript, la práctica de la fase **sigue
+  en Python** (es el ecosistema de referencia de LangGraph); los mismos conceptos se
+  leen por analogía en LangGraph.js sin cambiar el ejercicio.
+
+## D7 — Arquitectura del proyecto final con Python
+
+- **Contexto:** el proyecto final puede integrar Python como servicio o dejarlo como lab.
+- **Decisión:** **pendiente, se decide al llegar a la Fase 15**, según lo que pida el
+  proyecto del curso (opciones: Python como servicio detrás del mismo endpoint — ej.
+  FastAPI — o laboratorio aparte en `labs/python/`).
+
+## D8 — Gestor de dependencias de los labs Python
+
+- **Contexto:** 3F-Py exige fijar dependencias para reproducir el entorno.
+- **Decisión:** **pip + `requirements.txt` por defecto**; si el coordinador confirma otro
+  gestor (poetry, uv, conda), se cambia y se registra acá.
+
+---
 
 ## D2 — Horas por semana hasta el 18/11
 
@@ -66,6 +100,12 @@ Formato corto; una entrada por decisión. Referenciado por `copilot-instructions
 
 ## Decisiones técnicas previas (scaffold, 2026-09-18)
 
+- **Datos compartidos en `data/`** (raíz del repo): docs RAG en `data/docs/`,
+  `data/payments.json`, frases en `data/embeddings/`, golden set en
+  `data/golden/questions.json`. **Solo lectura para el código** (TS y Python); los
+  derivados (SQLite, índices) van a rutas ignoradas por git. Reemplaza la ubicación
+  previa `apps/server/seed/` (motivo: labs Python y TS leen el mismo dataset sin rutas
+  cruzadas).
 - **Monorepo npm workspaces** en la raíz (`apps/*`, `packages/*`).
 - **`@precurso/contracts` se consume desde `dist/`**: hay que buildear (`build:contracts`)
   o dejar `watch:contracts`. Trade-off aceptado; dos terminales + watch en dev (T-12).

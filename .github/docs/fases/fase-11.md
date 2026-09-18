@@ -1,20 +1,21 @@
 ---
 fase: 11
-titulo: "LangGraph"
+titulo: "LangGraph (Python, labs/python)"
 tier: C
 horas_estimadas: 6
 evalua_seguridad: false
-prerrequisitos: [10, E1]
+prerrequisitos: [10, E1, "3F-Py"]
 temario_utn: "M3 · Clase 2 (Orquestación con LangGraph)"
 ---
 
 ## Objetivo (una oración)
 
-Recrear el agente como grafo de estados con LangGraph.js y entender qué queda determinístico y qué decide el modelo.
+Recrear el caso "investigar un payment fallido" como grafo de estados con **LangGraph en
+Python** (`labs/python/`, decisión D6) y entender qué queda determinístico y qué decide el modelo.
 
 ## Conceptos a dominar (ver `glosario.md`)
 
-Nodes, edges, conditional edges, state, loop, termination, checkpoint; loop manual (Fase 9) vs grafo; qué aporta el framework de orquestación.
+Nodes, edges, conditional edges, state, loop, termination, checkpoint; loop manual (Fase 9) vs grafo; qué aporta el framework de orquestación; mapeo del agent loop TS (Fase 9) al grafo Python.
 
 ## Pregunta ancla
 
@@ -22,12 +23,16 @@ Nodes, edges, conditional edges, state, loop, termination, checkpoint; loop manu
 
 ## Ejercicio y criterios de aceptación (medibles)
 
-El agente de la Fase 9 recreado con LangGraph.js.
+El caso "investigar un payment fallido" recreado como grafo de estados en `labs/python/`,
+leyendo `data/payments.json` y `data/docs/`, y **comparado con el agent loop manual en
+TypeScript de la Fase 9** (qué aporta el grafo, qué decide el LLM, qué queda
+determinístico). Palabras clave de M3·2: **ciclos de retroalimentación, transiciones
+condicionales, control determinístico**.
 
-- [ ] El grafo tiene nodes con responsabilidades claras y state tipado.
+- [ ] El grafo tiene nodes con responsabilidades claras y state tipado (Pydantic/TypedDict).
 - [ ] La terminación es explícita (conditional edge), no un maxIterations oculto.
 - [ ] Checkpoint: pausar y reanudar una corrida.
-- [ ] Comparación documentada: qué aporta el grafo vs el loop a mano.
+- [ ] Comparación documentada en `PROGRESS.md`: loop TS a mano vs grafo Python.
 
 ## Casos de aceptación manuales
 
@@ -56,5 +61,5 @@ El agente de la Fase 9 recreado con LangGraph.js.
 - [ ] Ejecuta y cumple los criterios
 - [ ] Explica cada decisión sin mirar el código
 - [ ] Resuelve el cambio en vivo
-- [ ] Sección de la fase en PROGRESS.md completa (comparación loop vs grafo)
+- [ ] Sección de la fase en PROGRESS.md completa (comparación loop TS vs grafo Python)
 - [ ] Ledger actualizado

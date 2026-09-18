@@ -14,7 +14,7 @@ Evaluar el sistema completo con métricas de retrieval y de respuesta, probar un
 
 ## Conceptos a dominar (ver `glosario.md`)
 
-Faithfulness, groundedness, answer relevance; RAGAS / Phoenix / TruLens (qué mide cada uno — probar al menos uno en modo demostración); tracing/observabilidad; comparación de configuraciones (básico vs hybrid vs reranking).
+Faithfulness, groundedness, answer relevance; RAGAS / Phoenix / TruLens (qué mide cada uno — **RAGAS en Python** sobre `data/golden/questions.json`, modo demostración); tracing/observabilidad; comparación de configuraciones (básico vs hybrid vs reranking).
 
 ## Pregunta ancla
 
@@ -25,8 +25,9 @@ Faithfulness, groundedness, answer relevance; RAGAS / Phoenix / TruLens (qué mi
 Dataset ≥20 preguntas + harness completo + un framework de evaluación + tracing básico.
 
 - [ ] Métricas de retrieval (recall@k, MRR de 3E) + de respuesta (faithfulness, groundedness, answer relevance).
-- [ ] Un framework (RAGAS/Phoenix/TruLens) probado en modo demostración.
+- [ ] Un framework (RAGAS/Phoenix/TruLens) probado en modo demostración: **RAGAS en Python** (`labs/python/`) sobre `data/golden/questions.json` (el mismo dataset de 3E).
 - [ ] Comparación documentada: RAG básico vs hybrid vs reranking.
+- [ ] En `PROGRESS.md`: comparación entre las métricas de la 3E (recall@k, MRR, TS a mano) y las de RAGAS (Python).
 - [ ] Latencia, tokens y costo logueados por request.
 
 ## Casos de aceptación manuales

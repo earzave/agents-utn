@@ -22,7 +22,7 @@ Prompt injection directa e indirecta; data exfiltration; tool abuse; excessive a
 
 ## Ejercicio y criterios de aceptación (medibles)
 
-`security/guardrails.ts` + doc RAG "envenenado" en seed + casos manuales.
+`security/guardrails.ts` + doc RAG "envenenado" en `data/docs/` + casos manuales.
 
 - [ ] Un doc RAG con "instrucciones hostiles" se trata como DATA (no se ejecuta).
 - [ ] Operaciones destructivas las impide la ARQUITECTURA aunque el LLM las pida.

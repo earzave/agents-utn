@@ -51,29 +51,29 @@ consumo de APIs.
 
 ## Matriz de cobertura (tema UTN → fase → estado → acción)
 
-| #   | Tema UTN                                    | Fase actual                                               | Estado   | Acción |
-| --- | ------------------------------------------- | --------------------------------------------------------- | -------- | ------ |
-| 1   | Limitaciones del RAG estándar en producción | 3E (catálogo de fallas)                                   | Cubierto | —      |
-| 2   | Chunking semántico y recursivo              | 2 (recursivo ✓, semántico conceptual)                     | Cubierto | —      |
-| 3   | Parent-Document Retrieval                   | **2b**                                                    | Cubierto | —      |
-| 4   | Impacto de la estructura del documento      | 2 (metadata) + 2b (chunking por encabezados)              | Cubierto | —      |
-| 5   | Bases vectoriales e índices (HNSW/IVF)      | 1 (dimensión ✓) + cuadro comparativo #18                  | Cubierto | —      |
-| 6   | Recuperación híbrida y filtrado             | 4                                                         | Cubierto | —      |
-| 7   | Re-ranking                                  | 5                                                         | Cubierto | —      |
-| 8   | Transformación de consultas                 | 5 (reescritura, multi-query, HyDE)                        | Cubierto | —      |
-| 9   | Contexto avanzado                           | 10b (long-context vs RAG, compresión)                     | Cubierto | —      |
-| 10  | Gráficos de conocimiento / GraphRAG         | 10b (conceptual + mini-lab opcional)                      | Cubierto | —      |
-| 11  | Evaluación (RAGAS/Phoenix/TruLens)          | 3E (temprana) + 14 (completa)                             | Cubierto | —      |
-| 12  | Fundamentos del razonamiento agéntico       | 9 (loop + ReAct + plan-and-execute + reflexión)           | Cubierto | —      |
-| 13  | Function Calling y Tool Design              | 6–7                                                       | Cubierto | —      |
-| 14  | Orquestación con LangGraph                  | 11                                                        | Cubierto | —      |
-| 15  | Multi-agente y Seguridad                    | 12–13                                                     | Cubierto | —      |
-| 16  | Taller de integración / proyecto final      | 15                                                        | Cubierto | —      |
-| 17  | LangChain y LlamaIndex                      | 3F (puente a frameworks)                                  | Cubierto | —      |
-| 18  | Pinecone / Weaviate / Milvus / Supabase     | 1 (cuadro comparativo conceptual; pgvector ≈ Supabase)    | Cubierto | —      |
-| 19  | GPT-4o / Claude / Gemini vía API            | 0 (tabla comparativa de proveedores)                      | Cubierto | —      |
-| 20  | CrewAI                                      | 12 (demostración de lectura) + P (labs/python, D1=Python) | Cubierto | —      |
-| 21  | Despliegue                                  | 15 (Docker del stack)                                     | Cubierto | —      |
+| #   | Tema UTN                                    | Fase actual                                                  | Estado   | Acción |
+| --- | ------------------------------------------- | ------------------------------------------------------------ | -------- | ------ |
+| 1   | Limitaciones del RAG estándar en producción | 3E (catálogo de fallas)                                      | Cubierto | —      |
+| 2   | Chunking semántico y recursivo              | 2 (recursivo ✓, semántico conceptual)                        | Cubierto | —      |
+| 3   | Parent-Document Retrieval                   | **2b**                                                       | Cubierto | —      |
+| 4   | Impacto de la estructura del documento      | 2 (metadata) + 2b (chunking por encabezados)                 | Cubierto | —      |
+| 5   | Bases vectoriales e índices (HNSW/IVF)      | 1 (dimensión ✓) + cuadro comparativo #18                     | Cubierto | —      |
+| 6   | Recuperación híbrida y filtrado             | 4                                                            | Cubierto | —      |
+| 7   | Re-ranking                                  | 5                                                            | Cubierto | —      |
+| 8   | Transformación de consultas                 | 5 (reescritura, multi-query, HyDE)                           | Cubierto | —      |
+| 9   | Contexto avanzado                           | 10b (long-context vs RAG, compresión)                        | Cubierto | —      |
+| 10  | Gráficos de conocimiento / GraphRAG         | 10b (conceptual + mini-lab opcional)                         | Cubierto | —      |
+| 11  | Evaluación (RAGAS/Phoenix/TruLens)          | 3E (temprana) + 14 (completa)                                | Cubierto | —      |
+| 12  | Fundamentos del razonamiento agéntico       | 9 (loop + ReAct + plan-and-execute + reflexión)              | Cubierto | —      |
+| 13  | Function Calling y Tool Design              | 6–7                                                          | Cubierto | —      |
+| 14  | Orquestación con LangGraph                  | 11                                                           | Cubierto | —      |
+| 15  | Multi-agente y Seguridad                    | 12–13                                                        | Cubierto | —      |
+| 16  | Taller de integración / proyecto final      | 15                                                           | Cubierto | —      |
+| 17  | LangChain y LlamaIndex                      | 3F (puente a frameworks)                                     | Cubierto | —      |
+| 18  | Pinecone / Weaviate / Milvus / Supabase     | 1 (cuadro comparativo conceptual; pgvector ≈ Supabase)       | Cubierto | —      |
+| 19  | GPT-4o / Claude / Gemini vía API            | 0 (tabla comparativa de proveedores)                         | Cubierto | —      |
+| 20  | CrewAI                                      | 12 (demostración de lectura) + P (labs/python, D1=TS+Python) | Cubierto | —      |
+| 21  | Despliegue                                  | 15 (Docker del stack)                                        | Cubierto | —      |
 
 ---
 
@@ -97,11 +97,11 @@ consumo de APIs.
 | 10 — Estado y memoria                             | M2·1 (TBC)                                |
 | 10b — Contexto largo, compresión, GraphRAG        | título del M2                             |
 | — **E1 (bloquea fase 11)**                        | —                                         |
-| 11 — LangGraph                                    | M3·2                                      |
+| 11 — LangGraph (Python, labs/python)              | M3·2                                      |
 | — **E2 (bloquea fase 12)**                        | —                                         |
-| 12 — Multi-agent                                  | M3·3                                      |
+| 12 — Multi-agent (TS + CrewAI/AutoGen labs)       | M3·3                                      |
 | 13 — Seguridad + human-in-the-loop                | M3·3                                      |
-| 14 — Evaluación completa (faithfulness, RAGAS…)   | M2·2                                      |
+| 14 — Evaluación completa (RAGAS en Python)        | M2·2                                      |
 | 15 — Proyecto final + Docker + examen final       | M3·4                                      |
 
 > Seguridad vive en M3·3 junto a multi-agente, pero es **transversal** (se practica desde
@@ -114,33 +114,34 @@ consumo de APIs.
 > El detalle completo (objetivo, ejercicio, criterios medibles, semillas de preguntas,
 > casos de aceptación manuales, DoD) vive en `docs/fases/fase-XX.md` — un archivo por fase.
 
-| Fase | Nombre                                         | Tier | Horas est. | Detalle                            |
-| ---- | ---------------------------------------------- | ---- | ---------- | ---------------------------------- |
-| D    | Diagnóstico inicial                            | —    | 1          | `skills/diagnostico`               |
-| 0    | Mapa mental de LLMs                            | A    | 4          | [`fase-00.md`](fases/fase-00.md)   |
-| 1    | Tokens y embeddings                            | A    | 4          | [`fase-01.md`](fases/fase-01.md)   |
-| 2    | Chunking                                       | A    | 5          | [`fase-02.md`](fases/fase-02.md)   |
-| 2b   | Parent-Document Retrieval                      | A    | 3          | [`fase-02b.md`](fases/fase-02b.md) |
-| 3    | Primer RAG                                     | A    | 8          | [`fase-03.md`](fases/fase-03.md)   |
-| 3E   | Evaluación temprana (recall@k, MRR)            | A    | 4          | [`fase-03E.md`](fases/fase-03E.md) |
-| 4    | Retrieval de calidad                           | A    | 5          | [`fase-04.md`](fases/fase-04.md)   |
-| 5    | Reranking + query transformation               | A    | 5          | [`fase-05.md`](fases/fase-05.md)   |
-| Cx   | Mini-examen de módulo RAG (no bloqueante)      | —    | 1          | después de la fase 5               |
-| 6    | Tool calling                                   | B    | 5          | [`fase-06.md`](fases/fase-06.md)   |
-| 7    | Tools + SQL                                    | B    | 5          | [`fase-07.md`](fases/fase-07.md)   |
-| 8    | RAG + tools                                    | B    | 4          | [`fase-08.md`](fases/fase-08.md)   |
-| 9    | Agent loop + ReAct/plan-execute/reflexión      | B    | 6          | [`fase-09.md`](fases/fase-09.md)   |
-| 10   | Estado y memoria                               | B    | 5          | [`fase-10.md`](fases/fase-10.md)   |
-| E1   | **Examen global pre-LangGraph (bloqueante)**   | B    | 2          | `skills/examen-global`             |
-| 11   | LangGraph                                      | C    | 6          | [`fase-11.md`](fases/fase-11.md)   |
-| E2   | **Examen global pre-Multi-Agent (bloqueante)** | C    | 2          | `skills/examen-global`             |
-| 12   | Multi-agent                                    | D    | 6          | [`fase-12.md`](fases/fase-12.md)   |
-| 13   | Seguridad + human-in-the-loop                  | C    | 4          | [`fase-13.md`](fases/fase-13.md)   |
-| 14   | Evaluación completa (RAGAS-style)              | D    | 6          | [`fase-14.md`](fases/fase-14.md)   |
-| 15   | Proyecto final + Docker + examen final         | D    | 10         | [`fase-15.md`](fases/fase-15.md)   |
-| P    | Puente a Python (labs/python) — D1=Python      | C    | 3          | [`fase-P.md`](fases/fase-P.md)     |
-| 3F   | Puente a frameworks (LlamaIndex/LangChain)     | C    | 3          | [`fase-03F.md`](fases/fase-03F.md) |
-| 10b  | Contexto largo, compresión, GraphRAG           | C    | 2          | [`fase-10b.md`](fases/fase-10b.md) |
+| Fase  | Nombre                                         | Tier | Horas est. | Detalle                                  |
+| ----- | ---------------------------------------------- | ---- | ---------- | ---------------------------------------- |
+| D     | Diagnóstico inicial                            | —    | 1          | `skills/diagnostico`                     |
+| 0     | Mapa mental de LLMs                            | A    | 4          | [`fase-00.md`](fases/fase-00.md)         |
+| 1     | Tokens y embeddings                            | A    | 4          | [`fase-01.md`](fases/fase-01.md)         |
+| 2     | Chunking                                       | A    | 5          | [`fase-02.md`](fases/fase-02.md)         |
+| 2b    | Parent-Document Retrieval                      | A    | 3          | [`fase-02b.md`](fases/fase-02b.md)       |
+| 3     | Primer RAG                                     | A    | 8          | [`fase-03.md`](fases/fase-03.md)         |
+| 3E    | Evaluación temprana (recall@k, MRR)            | A    | 4          | [`fase-03E.md`](fases/fase-03E.md)       |
+| 4     | Retrieval de calidad                           | A    | 5          | [`fase-04.md`](fases/fase-04.md)         |
+| 5     | Reranking + query transformation               | A    | 5          | [`fase-05.md`](fases/fase-05.md)         |
+| 3F-Py | Puente a Python (LangChain en labs/python)     | C    | 3          | [`fase-03F-Py.md`](fases/fase-03F-Py.md) |
+| Cx    | Mini-examen de módulo RAG (no bloqueante)      | —    | 1          | después de la fase 5                     |
+| 6     | Tool calling                                   | B    | 5          | [`fase-06.md`](fases/fase-06.md)         |
+| 7     | Tools + SQL                                    | B    | 5          | [`fase-07.md`](fases/fase-07.md)         |
+| 8     | RAG + tools                                    | B    | 4          | [`fase-08.md`](fases/fase-08.md)         |
+| 9     | Agent loop + ReAct/plan-execute/reflexión      | B    | 6          | [`fase-09.md`](fases/fase-09.md)         |
+| 10    | Estado y memoria                               | B    | 5          | [`fase-10.md`](fases/fase-10.md)         |
+| E1    | **Examen global pre-LangGraph (bloqueante)**   | B    | 2          | `skills/examen-global`                   |
+| 11    | LangGraph (Python, labs/python — D6)           | C    | 6          | [`fase-11.md`](fases/fase-11.md)         |
+| E2    | **Examen global pre-Multi-Agent (bloqueante)** | C    | 2          | `skills/examen-global`                   |
+| 12    | Multi-agent (TS + CrewAI/AutoGen labs)         | D    | 6          | [`fase-12.md`](fases/fase-12.md)         |
+| 13    | Seguridad + human-in-the-loop                  | C    | 4          | [`fase-13.md`](fases/fase-13.md)         |
+| 14    | Evaluación completa (RAGAS en Python)          | D    | 6          | [`fase-14.md`](fases/fase-14.md)         |
+| 15    | Proyecto final + Docker + examen final         | D    | 10         | [`fase-15.md`](fases/fase-15.md)         |
+| P     | Puente a Python (labs/python) — D1=TS+Python   | C    | 3          | [`fase-P.md`](fases/fase-P.md)           |
+| 3F    | Puente a frameworks (LlamaIndex/LangChain)     | C    | 3          | [`fase-03F.md`](fases/fase-03F.md)       |
+| 10b   | Contexto largo, compresión, GraphRAG           | C    | 2          | [`fase-10b.md`](fases/fase-10b.md)       |
 
 **Tiers** (decisión D2 = 8 h/semana → objetivo **A + B** antes del 18/11; C si hay tiempo;
 D durante el curso). Detalle del calendario en `decisiones.md` y `PROGRESS.md` (columna Tier).
@@ -158,7 +159,10 @@ respuesta estructurada.
 
 Tokenización, embeddings, vector, dimensión, cosine similarity, semantic search.
 **Nivel conceptual:** HNSW/IVF (índices), costo de embeddings, normalización de vectores.
-Ejercicio: script con 10 frases (pagos/SAP/Docker), similitud vs 3 queries.
+Ejercicio: script con 10 frases (pagos/SAP/Docker, en `data/embeddings/`), similitud vs
+3 queries. **T-10 ANTES:** verificar el proveedor de embeddings con un script mínimo en
+Python (lo escribe el estudiante en `labs/python/`; obliga a tener el entorno listo en
+semana 1).
 **Pregunta ancla:** "¿Por qué embeddings encuentran significado aunque las palabras no coincidan?"
 
 ### Phase 2 — Chunking
@@ -184,7 +188,8 @@ pregunta que intenta inducir invención.
 
 ### Phase 3E — Evaluación mínima temprana _(nueva)_
 
-Conjunto de ~15 preguntas doradas (question, expectedSources); medir **recall@k** y
+Conjunto de ~15 preguntas doradas (`data/golden/questions.json`: question,
+expectedAnswer, expectedSources — compartido con RAGAS en la Fase 14); medir **recall@k** y
 **MRR** sobre el RAG de la Fase 3. **Catálogo de fallas del RAG estándar**: chunk mal
 cortado, consulta ambigua, pregunta multi-hop, dato desactualizado. Las fases 4 y 5 se
 comparan contra estos números, no contra intuición.
@@ -254,11 +259,19 @@ entre interacciones). `AgentState` con persistencia simple. Ejemplo: "Analizá e
 
 ### Examen global #1 (bloqueante) → ver `protocolo-tutor.md` §6
 
-### Phase 11 — LangGraph
+### Phase 3F-Py — Puente a Python _(nueva, Tier C, D1=TS+Python)_
 
-Recrear el agente como grafo de estados: nodes, edges, conditional edges, state, loop,
-termination, checkpoint. Comparar loop manual vs grafo: qué aporta el grafo, qué decide
-el LLM, qué queda determinístico.
+Portar el RAG de la Fase 3 a **LangChain en Python** (`labs/python/`): entorno virtual +
+dependencias fijadas (D8), Pydantic en los límites, tabla de mapeo TS ↔ Python y
+comparación del JSON Schema de zod vs Pydantic. Requisito: entorno creado y verificado
+(el script T-10 de la Fase 1 ya obliga a esto).
+
+### Phase 11 — LangGraph (Python)
+
+Recrear el caso "investigar un payment fallido" como grafo de estados en
+`labs/python/` (LangGraph en Python, D6): nodes, edges, conditional edges, state, loop,
+termination, checkpoint. Comparar con el agent loop manual en TypeScript de la Fase 9:
+qué aporta el grafo, qué decide el LLM, qué queda determinístico.
 
 ### Examen global #2 (bloqueante) → ver `protocolo-tutor.md` §6
 
@@ -266,8 +279,9 @@ el LLM, qué queda determinístico.
 
 Supervisor + Payment Agent + SAP Agent + Documentation Agent. Responsabilidad y contexto
 limitados, tools específicas, handoffs tipados. Documentar cuándo multi-agent **aumenta**
-complejidad/latencia/costo/superficie de ataque y cuándo aporta valor. CrewAI solo como
-demostración de lectura (D1=Python → hay labs/python en Fase P).
+complejidad/latencia/costo/superficie de ataque y cuándo aporta valor. La implementación
+manual (supervisor + handoffs tipados) sigue en TypeScript; **CrewAI y AutoGen: leer y
+modificar un ejemplo mínimo en `labs/python/`**.
 
 > Patrones rescatados: `analisis-agents-sdk-demos.md` §Phase 12 — triage/supervisor enruta
 > (no resuelve), agentes con tools propias, handoffs habilitados por estado
@@ -289,10 +303,11 @@ schemas estrictos, límites, auditoría, human approval.
 
 ### Phase 14 — Evaluación
 
-Dataset `questions.json` con ≥20 preguntas (question, expectedAnswer, expectedSources).
-Medir retrieval quality, answer relevance, **faithfulness, groundedness**, latency, tokens,
-costo. Comparar: RAG básico vs hybrid vs reranking. Probar al menos un framework
-(**RAGAS / Phoenix / TruLens**) en modo demostración + tracing básico.
+Dataset `data/golden/questions.json` con ≥20 preguntas (question, expectedAnswer,
+expectedSources). Medir retrieval quality, answer relevance, **faithfulness,
+groundedness**, latency, tokens, costo. Comparar: RAG básico vs hybrid vs reranking.
+**RAGAS en Python** (`labs/python/`) en modo demostración + tracing básico; comparar en
+`PROGRESS.md` las métricas de la 3E (recall@k, MRR) con las de RAGAS.
 
 ### Phase 15 — Proyecto final
 
@@ -300,7 +315,7 @@ costo. Comparar: RAG básico vs hybrid vs reranking. Probar al menos un framewor
 pagos/eventos/retries, agent loop, state, memory, LangGraph, evaluación, seguridad,
 logs/tracing, **Docker del stack completo**. + **Examen final** con ejercicio nuevo (ver protocolo §6).
 
-### Phase P — Puente a Python _(nueva, D1=Python)_
+### Phase P — Puente a Python _(nueva, D1=TS+Python)_
 
 En `labs/python/` (carpeta aparte, sin tocar el monorepo TS): leer y modificar un ejemplo
 mínimo de **LangChain** y uno de **CrewAI** en Python. Objetivo: que el idioma no sea la

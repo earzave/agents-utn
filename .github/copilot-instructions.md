@@ -56,6 +56,8 @@ las reglas duras: `.github/docs/protocolo-tutor.md` §1bis. Estado del avance:
 - Detalle de cada fase (objetivo, criterios medibles, semillas de preguntas):
   `.github/docs/fases/fase-XX.md`. Instrucciones de código: `backend-ts.instructions.md`
   (apps/server + contracts) · `frontend-react.instructions.md` (apps/web).
+- Python vive en `labs/python/` (fases 3F-Py, 11, 12, 14 — ver `python.instructions.md`);
+  los datos compartidos TS/Python van en `data/` (solo lectura para el código).
 
 ## Fuentes del workspace
 

@@ -5,7 +5,7 @@ tier: C
 horas_estimadas: 3
 evalua_seguridad: false
 prerrequisitos: [D]
-temario_utn: "transversal (el curso puede dictarse en Python — D1=Python)"
+temario_utn: "transversal (pre-curso híbrido: conceptos a mano en TS, labs de frameworks en Python — D1)"
 ---
 
 ## Objetivo (una oración)

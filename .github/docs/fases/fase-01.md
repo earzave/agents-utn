@@ -22,9 +22,12 @@ Tokenización, embedding, vector, dimensión, cosine similarity, semantic search
 
 ## Ejercicio y criterios de aceptación (medibles)
 
-Script con 10 frases (pagos/SAP/Docker) + similitud contra 3 queries, con el proveedor D4 (Ollama Cloud, embeddings por API OpenAI-compatible).
+Script con 10 frases (pagos/SAP/Docker, en `data/embeddings/`) + similitud contra 3 queries, con el proveedor D4 (Ollama Cloud, embeddings por API OpenAI-compatible).
 
-- [ ] Verificar ANTES que el proveedor responde embeddings (script de prueba) — T-10.
+- [ ] **T-10 ANTES de la Fase 1**: verificar que el proveedor responde embeddings con un
+      **script mínimo en Python** (lo escribís vos en `labs/python/`, pide el embedding de
+      una frase al proveedor D4 y muestra la dimensión). Obliga a tener el entorno Python
+      listo en la semana 1 y comprueba el proveedor de una vez.
 - [ ] El script imprime el ranking de similitud por query y es reproducible.
 - [ ] Sabés explicar qué dimensión tiene el vector y de dónde sale.
 - [ ] Podés explicar qué pasaría si NO normalizás los vectores antes del coseno.

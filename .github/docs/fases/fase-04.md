@@ -24,7 +24,7 @@ Vector search vs keyword (BM25) vs hybrid; fusión de rankings; metadata filteri
 
 `retrieval/keyword-search.ts` (BM25) + `hybrid-search.ts` + filtros de metadata.
 
-- [ ] BM25 implementado a mano (TF-IDF/ scoring BM25) sobre los docs seed.
+- [ ] BM25 implementado a mano (TF-IDF/ scoring BM25) sobre los docs de `data/docs/`.
 - [ ] Hybrid fusiona ambos rankings (método simple, explicado).
 - [ ] Los filtros de metadata se aplican ANTES del ranking.
 - [ ] Comparás recall@k/MRR vs la línea base de 3E y lo documentás.

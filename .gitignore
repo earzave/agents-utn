@@ -19,5 +19,13 @@ coverage/
 *.log
 npm-debug.log*
 
+# Python (labs/python): entorno virtual, cachés y env local (D1: labs en Python)
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.pytest_cache/
+labs/python/.env
+
 # VS Code: configs compartidas sí, perfiles y cachés de debug no
 .vscode/.chrome-debug-profile/

@@ -14,7 +14,7 @@ Componer un sistema multi-agente manual con supervisor que enruta y handoffs tip
 
 ## Conceptos a dominar (ver `glosario.md`)
 
-Supervisor (enruta, no resuelve); handoffs tipados; agentes con contexto y tools limitados; cuándo multi-agent aumenta complejidad/latencia/costo/superficie de ataque; CrewAI como demostración de lectura (D1=Python → ver Fase P).
+Supervisor (enruta, no resuelve); handoffs tipados; agentes con contexto y tools limitados; cuándo multi-agent aumenta complejidad/latencia/costo/superficie de ataque; **CrewAI y AutoGen: leer y modificar un ejemplo mínimo en `labs/python/`** (D1=TS+Python).
 
 ## Pregunta ancla
 
@@ -28,12 +28,14 @@ Supervisor + Payment Agent + SAP Agent + Documentation Agent (multi-agente manua
 - [ ] Cada agente tiene su allowlist de tools y contexto mínimo.
 - [ ] Handoffs tipados (estado explícito entre agentes).
 - [ ] Documentado: caso donde multi-agent vale y caso donde no (con costo).
+- [ ] (labs/python) Ejemplo mínimo de **CrewAI** leído y **modificado** (agregar/cambiar un agente o task) y explicado (agentes/tasks/crew).
 
 ## Casos de aceptación manuales
 
 1. Pregunta de payments → Payment Agent, sin pasar por SAP.
 2. Pregunta mixta → supervisor enruta dos veces.
 3. Agente sin tool pedida → la rechaza (allowlist).
+4. En `labs/python/`: agregar un task al Crew de CrewAI y explicar su rol.
 
 ## Errores frecuentes a vigilar
 
