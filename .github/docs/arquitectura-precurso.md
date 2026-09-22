@@ -57,7 +57,7 @@ PrecursoUtnAgents/                (raíz = package.json con workspaces apps/* pa
 │           │   ├── chat/         (chat + fuentes + tool-calls — "lab de pruebas")
 │           │   └── tutor/        (panel de tutoría: fases, rúbrica, repaso — "modo tutor")
 │           ├── components/ui/    (shadcn/ui ya instalado)
-│           ├── store/            (Redux Toolkit + sagas; slices/sagas del estudiante)
+│           ├── store/            (Redux Toolkit + sagas; slices/sagas los implementa la IA, D9)
 │           ├── hooks/
 │           └── lib/              (utils, api client, tipos)
 └── packages/
@@ -103,8 +103,9 @@ simultáneos:
    endpoints del backend para reflejar el progreso real (PROGRESS.md o DB).
 
 > Implicancia para el tutor: ante un pedido de frontend, distinguir si es para el
-> **lab** (probar mi backend) o para el **modo tutor** (estudiar/repasar). El tutor
-> puede scaffoldear y revisar ambos, pero la lógica la escribe el estudiante.
+> **lab** (probar mi backend) o para el **modo tutor** (estudiar/repasar). El FE es
+> 100% IA (D9): la IA desarrolla íntegramente ambos; la práctica del estudiante vive
+> solo en `apps/server` + `packages/contracts` (+ `labs/python/`).
 
 ## Por qué esta forma
 

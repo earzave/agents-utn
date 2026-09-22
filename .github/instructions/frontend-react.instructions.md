@@ -4,7 +4,8 @@ applyTo: "apps/web/**"
 
 # Convenciones frontend React + Vite + Tailwind (apps/web)
 
-Código que **el estudiante escribe**. El tutor solo hace scaffold y revisa.
+Código que **desarrolla íntegramente la IA** (decisión D9): `apps/web` no es práctica
+del curso — es el lab visual para probar el backend. El estudiante no implementa el FE.
 
 ## Doble rol del frontend
 
@@ -31,7 +32,7 @@ apps/web/src/
 │   ├── chat/        chat + fuentes citadas + timeline de tool calls (lab)
 │   └── tutor/       fases, rúbrica /20, repaso de conceptos (modo tutor)
 ├── components/ui/   shadcn/ui
-├── store/           Redux Toolkit + sagas (slices/sagas los escribe el estudiante)
+├── store/           Redux Toolkit + sagas (slices/sagas los implementa la IA, D9)
 └── lib/             utils, api client, tipos
 ```
 
@@ -44,3 +45,7 @@ apps/web/src/
 - Tailwind utility-first; sin CSS global salvo tokens/base de Tailwind.
 - Errores del backend tipados con union discriminada (definida en contracts), no strings.
 - Prohibido: secrets en el FE; llamadas al LLM directo desde el FE (siempre vía API server).
+- **Implementación 100% IA (D9)**: cualquier cambio FE pedido durante el pre-curso lo
+  desarrolla íntegramente la IA (mensaje de commit sugerido: `fe(phase-N)`); nunca
+  `TODO(estudiante)` en `apps/web`. La IA NUNCA ejecuta el commit: el estudiante
+  revisa el diff y lo commitea.

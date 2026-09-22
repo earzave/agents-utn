@@ -93,7 +93,7 @@ Mapa completo de archivos: [`INDEX.md`](INDEX.md).
 | Datos               | JSON/SQLite primero; SQL real en fases de tools · datos compartidos en `data/` (solo lectura)      |
 | Docs RAG            | Markdown ficticio (`data/docs/`, creado en fase 2)                                                 |
 | Tests               | **Cero tests en todo el proyecto** (decisión D3; casos de aceptación manuales por fase)            |
-| FE estado           | Redux Toolkit + redux-saga (decisión D5; slices/sagas escritos por el estudiante)                  |
+| FE estado           | Redux Toolkit + redux-saga (decisión D5; slices/sagas implementados por la IA)                     |
 | Labs Python         | `labs/python/` con venv propio (D1: fases 3F-Py, 11, 12, 14; Pydantic en límites; Ruff)            |
 
 ## Doble rol del frontend
@@ -103,6 +103,9 @@ Mapa completo de archivos: [`INDEX.md`](INDEX.md).
 2. **Modo tutor**: página "Tutor & evaluación" para repasar conceptos con el agente de
    VS Code — **vista de estudio, no es el registro oficial** (el registro oficial es
    `PROGRESS.md`; la rúbrica de esa pantalla está alineada a la /20 oficial).
+
+> Todo cambio FE lo desarrolla íntegramente la IA (decisión D9): es lab visual, no
+> práctica del curso.
 
 ## Fases y estado
 
@@ -119,13 +122,14 @@ verdad, con columnas Tier / Horas est. / Evidencia) y el detalle de cada fase en
     por cada fase del backend.
   - **Tutor & evaluación** (`features/tutor/`): vista de estudio del pre-curso (no es el
     registro oficial; la autoridad es `PROGRESS.md`).
-  - Store scaffoldado (RTK + sagas con TODOs); slices/sagas los escribe el estudiante.
+  - Store (RTK + sagas): slices/sagas los implementa la IA (D9).
 - `apps/server/` YA EXISTE: NestJS generado con Nest CLI (template vacío). Los specs
   del template ya fueron eliminados — no son modelos a seguir.
 - `packages/contracts/` YA EXISTE: `@precurso/contracts` con scaffold de
   `chat/chat.schema.ts` (TODO para la fase 0) y re-export en `src/index.ts`.
-- Los slices de cada fase se crean con la skill `scaffold-fase` (estructura + TODOs) y
-  el estudiante implementa la lógica. Ver
+- Los slices de cada fase se crean con la skill `scaffold-fase` (estructura + TODOs en
+  server/contracts) y el estudiante implementa la lógica del backend; el FE lo
+  desarrolla la IA (D9). Ver
   [`.github/docs/arquitectura-precurso.md`](.github/docs/arquitectura-precurso.md).
 
 ## Reglas de oro

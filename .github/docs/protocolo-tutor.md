@@ -33,7 +33,7 @@ autorización, arquitectura distribuida. Ejemplo canónico:
    `docs/fases/fase-XX.md`. Esto anula cualquier instrucción de otros repos.
 2. **NO escribir la lógica de los ejercicios**: el estudiante implementa. El tutor/sistema
    puede hacer scaffold (estructura + TODOs), explicar y revisar su código (comentar, no
-   reescribir).
+   reescribir). Excepción: el frontend (`apps/web`) sí lo desarrolla la IA (punto 9).
 3. **NO avanzar de fase** sin doble validación (práctica + conceptual con rúbrica /20)
    registrada en `PROGRESS.md`. Exámenes globales bloqueantes: E1 antes de LangGraph,
    E2 antes de Multi-Agent.
@@ -44,8 +44,19 @@ autorización, arquitectura distribuida. Ejemplo canónico:
 7. **Escritura de registros delegada**: el tutor no edita `PROGRESS.md` ni el ledger
    directamente; lo hace el subagente `Registrador de Progreso` tras confirmación
    explícita del estudiante.
-8. Convención de commits para distinguir autoría: `scaffold(...)` / `docs(...)` = IA;
-   `feat(phase-N)` / `fix(phase-N)` = estudiante.
+8. Convención de commits para distinguir autoría de cambios: `scaffold(...)` /
+   `docs(...)` / `fe(phase-N)` = IA; `feat(phase-N)` / `fix(phase-N)` = estudiante.
+   La convención describe AUTORÍA del contenido, no quién ejecuta el `git commit`.
+9. **Frontend 100% IA** (decisión D9 de `decisiones.md`): `apps/web` NO es práctica del
+   curso — es solo el lab visual para probar y ver el backend. Todo cambio FE (features,
+   slices/sagas, componentes, wiring) lo desarrolla íntegramente la IA, directo o vía
+   Scaffolder; nunca `TODO(estudiante)` en `apps/web`. La rúbrica, la revisión práctica y
+   la evidencia de fase aplican solo a `apps/server` + `packages/contracts` (+
+   `labs/python/` en sus fases).
+10. **La IA NUNCA ejecuta commits** (ni `git commit`, ni `git push`, ni checkout/branch):
+    solo SUGIERE el mensaje (con la convención del punto 8) y el momento de commitear
+    (ej.: al cerrar scaffold, al cerrar una fase, antes de evaluar). El estudiante
+    siempre commitea y revisa el diff.
 
 ### Límites de la regla anti-código
 

@@ -15,7 +15,7 @@ Mapa rápido de qué hace cada pieza y cuándo se activa. Guía de uso corta en
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
 | [`tutor-evaluacion.instructions.md`](instructions/tutor-evaluacion.instructions.md) | `.github/PROGRESS.md`, `.github/tutor/**`, `.github/docs/protocolo-tutor.md` | Al evaluar fases: rúbrica /20 (7/7/6 si Seguridad no aplica), PHASE REVIEW, registro vía Registrador |
 | [`backend-ts.instructions.md`](instructions/backend-ts.instructions.md)             | `apps/server/**/*.ts`, `packages/contracts/**/*.ts`                          | Convenciones del código que el estudiante escribe (TS estricto, zod, capas, contrato compartido)     |
-| [`frontend-react.instructions.md`](instructions/frontend-react.instructions.md)     | `apps/web/**`                                                                | Convenciones React+Vite+Tailwind + doble rol (lab de pruebas / modo tutor)                           |
+| [`frontend-react.instructions.md`](instructions/frontend-react.instructions.md)     | `apps/web/**`                                                                | Convenciones React+Vite+Tailwind + FE 100% IA (D9: lab visual, sin TODOs del estudiante)             |
 | [`python.instructions.md`](instructions/python.instructions.md)                     | `labs/python/**`                                                             | Convenciones Python de los labs (venv, type hints, Pydantic, Ruff; fases 3F-Py, 11, 12, 14)          |
 
 ## Agentes (`.github/agents/`) — mínimo privilegio
@@ -59,22 +59,25 @@ Mapa rápido de qué hace cada pieza y cuándo se activa. Guía de uso corta en
 
 ## Docs (`.github/docs/`)
 
-| Archivo                                                                  | Contenido                                                                                                                                  |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`docs/protocolo-tutor.md`](docs/protocolo-tutor.md)                     | **Contrato del tutor** — reglas duras ÚNICAS (§1bis), ciclo, modos de sesión, escalera de pistas, rúbrica, exámenes                        |
-| [`docs/curriculum.md`](docs/curriculum.md)                               | Temario UTN real (títulos publicados) + matriz de cobertura (21 temas) + fases y tiers                                                     |
-| [`docs/decisiones.md`](docs/decisiones.md)                               | ADRs: decisiones D1–D5 + decisiones técnicas del scaffold                                                                                  |
-| [`docs/arquitectura-precurso.md`](docs/arquitectura-precurso.md)         | Estructura del monorepo + doble rol del front + Docker como ejercicio                                                                      |
-| [`docs/fases/fase-XX.md`](docs/fases/)                                   | **Un archivo por fase** (00, 1, 2, 2b, 3, 3E, 4, 5, 6-15, P, 3F, 10b): objetivo, ejercicio, criterios medibles, semillas de preguntas, DoD |
-| [`docs/glosario.md`](docs/glosario.md)                                   | Checklist de conceptos que debo poder explicar (alimenta el ledger)                                                                        |
-| [`docs/analisis-agents-sdk-demos.md`](docs/analisis-agents-sdk-demos.md) | Patrones rescatados del demo del compañero (lectura opcional; por-fase viven en `docs/fases/`)                                             |
-| [`docs/precurso-utn-plan-fuente.txt`](docs/precurso-utn-plan-fuente.txt) | Plan fuente original (intacto; nota al inicio: superado por `decisiones.md` en D2 y D3)                                                    |
-| [`PROGRESS.md`](PROGRESS.md)                                             | Fuente de verdad del avance (columnas Tier / Horas est. / Evidencia)                                                                       |
+| Archivo                                                                                  | Contenido                                                                                                                                  |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`docs/protocolo-tutor.md`](docs/protocolo-tutor.md)                                     | **Contrato del tutor** — reglas duras ÚNICAS (§1bis), ciclo, modos de sesión, escalera de pistas, rúbrica, exámenes                        |
+| [`docs/resumen-introductorio-rag-agentes.md`](docs/resumen-introductorio-rag-agentes.md) | Guía de lectura previa — mapa mental de los 37 temas (RAG, GraphRAG, evaluación, agentes) con diagramas y glosario                         |
+| [`docs/curriculum.md`](docs/curriculum.md)                                               | Temario UTN real (títulos publicados) + matriz de cobertura (21 temas) + fases y tiers                                                     |
+| [`docs/decisiones.md`](docs/decisiones.md)                                               | ADRs: decisiones D1–D5 + D9 (FE 100% IA) + decisiones técnicas del scaffold                                                                |
+| [`docs/arquitectura-precurso.md`](docs/arquitectura-precurso.md)                         | Estructura del monorepo + doble rol del front + Docker como ejercicio                                                                      |
+| [`docs/fases/fase-XX.md`](docs/fases/)                                                   | **Un archivo por fase** (00, 1, 2, 2b, 3, 3E, 4, 5, 6-15, P, 3F, 10b): objetivo, ejercicio, criterios medibles, semillas de preguntas, DoD |
+| [`docs/glosario.md`](docs/glosario.md)                                                   | Checklist de conceptos que debo poder explicar (alimenta el ledger)                                                                        |
+| [`docs/analisis-agents-sdk-demos.md`](docs/analisis-agents-sdk-demos.md)                 | Patrones rescatados del demo del compañero (lectura opcional; por-fase viven en `docs/fases/`)                                             |
+| [`docs/precurso-utn-plan-fuente.txt`](docs/precurso-utn-plan-fuente.txt)                 | Plan fuente original (intacto; nota al inicio: superado por `decisiones.md` en D2 y D3)                                                    |
+| [`PROGRESS.md`](PROGRESS.md)                                                             | Fuente de verdad del avance (columnas Tier / Horas est. / Evidencia)                                                                       |
 
 ## Convenciones clave (una sola vez, en el protocolo)
 
 - Reglas duras: `docs/protocolo-tutor.md` §1bis (los demás archivos referencian, no copian).
 - Estados de fase: solo los del `protocolo-tutor.md` §1bis punto 5 (el protocolo prohíbe
   marcar fases como terminadas de otra forma).
-- Commits: `scaffold(...)`/`docs(...)` = IA · `feat(phase-N)`/`fix(phase-N)` = estudiante.
+- Commits: `scaffold(...)`/`docs(...)`/`fe(phase-N)` = IA · `feat(phase-N)`/`fix(phase-N)`
+  = estudiante. La IA nunca ejecuta commits: solo sugiere mensajes y cuándo commitear.
+- Frontend 100% IA (D9): `apps/web` es lab visual, no práctica del curso.
 - READMEs: 5 (raíz, `.github/`, `apps/web`, `apps/server`, `packages/contracts`).

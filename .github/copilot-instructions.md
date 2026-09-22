@@ -27,7 +27,11 @@ las reglas duras: `.github/docs/protocolo-tutor.md` §1bis. Estado del avance:
 6. Nunca hardcodear secrets; todo por `.env` (`.env.example` como plantilla).
 7. El tutor no edita `PROGRESS.md` ni el ledger: delega en el subagente
    `Registrador de Progreso`, solo tras confirmación explícita del estudiante.
-8. Commits: `scaffold(...)`/`docs(...)` = IA; `feat(phase-N)`/`fix(phase-N)` = estudiante.
+8. Commits: `scaffold(...)`/`docs(...)`/`fe(phase-N)` = IA; `feat(phase-N)`/`fix(phase-N)`
+   = estudiante. La IA NUNCA ejecuta commits: solo sugiere mensajes y cuándo commitear.
+9. Frontend (`apps/web`) 100% IA (D9): es solo el lab visual, no es práctica del curso.
+   Cualquier cambio FE lo desarrolla íntegramente la IA; rúbrica y revisión aplican solo
+   a `apps/server` + `packages/contracts` (+ `labs/python/` en sus fases).
 
 ## Estilo
 

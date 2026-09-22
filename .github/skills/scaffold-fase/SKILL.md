@@ -25,15 +25,19 @@ con TODOs para el estudiante.
    `docs/` dentro de los apps ni READMEs dentro de `labs/python/`. Las notas/trade-offs
    de cada fase van a la sección de la fase en `.github/PROGRESS.md` (secciones para
    completar: Objetivo · Decisiones y trade-offs · Cómo ejecutar).
-6. Si la fase cambia el contrato FE/BE, el scaffold empieza en `packages/contracts/src/`
+6. **Frontend 100% IA (D9):** si la fase requiere cambio en `apps/web`, implementarlo
+   completo (sin `TODO(estudiante)`); es lab visual, no práctica del curso (mensaje de
+   commit sugerido: `fe(phase-N)`). Los TODOs del estudiante van solo en `apps/server`,
+   `packages/contracts` y `labs/python/`.
+7. Si la fase cambia el contrato FE/BE, el scaffold empieza en `packages/contracts/src/`
    (nuevo schema zod + TODO) y re-exporta desde `src/index.ts` (línea lista para
    descomentar). Recordar al estudiante buildear/watch contracts para que TS vea el
-   tipo nuevo.
-7. Los datos compartidos viven en **`data/`** (raíz del repo, **solo lectura** para el
+   tipo nuevo. El lado FE de esa integración lo implementa la IA (D9).
+8. Los datos compartidos viven en **`data/`** (raíz del repo, **solo lectura** para el
    código): docs RAG en `data/docs/`, payments en `data/payments.json`, frases en
    `data/embeddings/`, golden set en `data/golden/questions.json`. NUNCA recrear
    `apps/server/seed/` ni duplicar datos en `labs/python/`.
-8. En `labs/python/` los TODOs van como `# TODO(estudiante): ...`; nunca lógica
+9. En `labs/python/` los TODOs van como `# TODO(estudiante): ...`; nunca lógica
    resuelta, nunca dependencias instaladas, nunca tests, ningún README.
 
 ## Procedimiento
@@ -67,13 +71,15 @@ con TODOs para el estudiante.
 4. Agregar (o dejar listas) las secciones VACÍAS de la fase en `.github/PROGRESS.md`
    (Objetivo · Decisiones y trade-offs · Cómo ejecutar) para que el estudiante las
    use al documentar. No crear READMEs ni carpetas `docs/` en los apps.
-5. Reportar: archivos creados, lista de TODOs en orden sugerido (empezando por
-   contracts si cambió el contrato), qué NO se implementó a propósito.
+5. **NUNCA ejecutar commits** (ni `git commit`, ni `git push`): solo sugerir el mensaje
+   (formato según autoría del contenido, punto 5 del reporte) y el momento de commitear;
+   el estudiante revisa el diff y commitea.
 
 ## Prohibido
 
 - Implementar la solución (parcial o total).
 - Código "de ejemplo" que ya resuelva el TODO.
+- Ejecutar commits (solo se sugieren mensajes y momentos; el estudiante commitea).
 - Tests.
 - Secrets reales en `.env.example`.
 - Dockerfiles/compose en el scaffold base: solo se scaffoldea docker-compose cuando la

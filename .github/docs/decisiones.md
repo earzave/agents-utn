@@ -94,7 +94,20 @@ Formato corto; una entrada por decisión. Referenciado por `copilot-instructions
 - **Decisión (estudiante, 2026-09-18):** **mantener Redux Toolkit + redux-saga** — ya lo
   domina, no es un objetivo de práctica, pero sirve para el scaffold y la arquitectura del
   proyecto (el lab puede necesitar cancelación de corridas de agente, ej. `takeLatest`).
-- **Consecuencias:** no se quita nada; slices/sagas los escribe el estudiante en su fase.
+- **Consecuencias:** no se quita nada; los slices/sagas de FE los implementa la IA (D9).
+
+## D9 — Frontend 100% IA
+
+- **Contexto:** `apps/web` no es práctica del curso: es el lab visual para probar y ver
+  funcionar lo que el estudiante implementa en `apps/server` (más el modo tutor).
+  Escribirlo a mano quema horas de pre-curso sin impacto en conocimiento.
+- **Decisión (estudiante, 2026-09-22):** **todo cambio de frontend lo desarrolla
+  íntegramente la IA** — features, slices/sagas, componentes, wiring con el backend —
+  directo o vía subagente Scaffolder. Sin `TODO(estudiante)` en `apps/web`; el
+  estudiante no toca el FE como ejercicio.
+- **Consecuencias:** commits FE = `fe(phase-N)` (IA); la rúbrica /20, el review práctico
+  y la evidencia de fase aplican solo a `apps/server` + `packages/contracts` (+
+  `labs/python/` en sus fases). El FE no genera evidencia de conocimiento.
 
 ---
 

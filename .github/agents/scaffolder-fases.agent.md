@@ -29,8 +29,12 @@ fase en el monorepo — `packages/contracts` (contrato FE/BE), `apps/server` (Ne
   medibles, casos de aceptación manuales) antes de crear nada.
 - Los READMEs del repo son 5: raíz, `.github/`, `apps/web`, `apps/server` y
   `packages/contracts`. NO crear READMEs ni carpetas `docs/` dentro de los apps.
-- Al terminar, sugerir commit con formato `scaffold(phase-N): <resumen>` para que el diff
-  se pueda revisar (convención de autoría: scaffold/docs = IA · feat/fix = estudiante).
+- Al terminar, sugerir commit con formato `scaffold(phase-N): <resumen>` (o
+  `fe(phase-N): <resumen>` si tocó `apps/web`) para que el diff se pueda revisar
+  (convención de autoría: scaffold/docs/fe = IA · feat/fix = estudiante). **NUNCA
+  ejecutar el commit**: el estudiante revisa el diff y lo commitea.
+- **Frontend 100% IA (D9):** cualquier cambio en `apps/web` lo implementás completo
+  (sin TODOs del estudiante); es lab visual, no práctica del curso.
 
 ## Qué creás por fase (mapeo rápido)
 
